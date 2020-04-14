@@ -1,0 +1,125 @@
+html {
+	height: 100%;
+}
+body {
+	margin: 0;
+	height: 100%;
+	background: #fc7400;
+}
+
+#game-container {
+	color: #ffffff;
+	padding-top: 5%;
+}
+#game-container h1 {
+	font-size: 28px !important;
+	margin-top: 0;
+	margin-bottom: 20px;
+	position: relative;
+    text-align: center;
+}
+#game-container h2 {
+	font-size: 13px;
+    margin: 10px 0;
+    text-align: center;
+}
+#game {
+	text-align: center;
+}
+@media screen and (max-width: 768px) {
+	#game {
+		width: 100%;
+	}
+	table {
+		width: 100%;
+	}
+	#game-container {
+		padding: 25px 5%;
+		margin-bottom: 30px;
+	}
+	#game {
+		margin-bottom: 25px;
+	}
+}
+table {
+	margin: 0 auto;
+    background: #ffffff;
+}
+td {
+	width: 100px;
+	height: 100px;
+	font-size: 50px;
+	border: 1px solid #ccc;
+	text-align:center;
+}
+img.mogura {
+	width: calc(100px - 6px);
+	display: block;
+	margin: 0 auto;
+}
+img.mogura:hover {
+	cursor: pointer;
+}
+#message {
+	font-size: 25px;
+	font-weight:bold;
+	text-shadow: #fff 1px 0px 1px;
+    color: #ffffff;
+    padding-top: 2%;
+}
+#count {
+	font-size: 25px;
+	font-weight:bold;
+	text-shadow: #fff 1px 0px 1px;
+    color: #ffffff;
+    padding-top: 2%;
+}
+
+.main{
+	display: block;
+	height: 100%;
+}
+
+.play_game{
+	margin: 0 auto;
+	text-align: center;
+	background-color:#fc7400;
+	border: none;
+}
+
+.play_btn {
+	font-size: 40px;
+	height: 56px;
+	width: 160px;
+  display: inline-block;
+  max-width: 180px;
+  text-align: left;
+  border: 2px solid #9ec34b;
+  color: #9ec34b;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+	transition: .4s;
+	background-color:white;
+}
+
+.play_btn:hover {
+  background-color: #9ec34b;
+  border-color: #cbe585;
+  color: #FFF;
+}
+.top_image {
+	display: flex;
+}
+.mogura_image{
+	width: 40%;
+	height: 32%;
+	margin: 50px 0 50px 10%;
+	max-width: 555px;
+	max-height: 425px;
+}
+
+.game_play_btn{
+	display: flex;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>モグラ叩きゲーム</title>
+<script>
+// すべてが読み込まれたあとに発動する
+window.onload = function() {
+	// ページを移動する関数
+  function loc() {
+    window.location = "/games/result";
+  }
+  //ページを移動する関数を呼び出し時間を指定している。5000なら5秒
+	setTimeout(function(){ loc(); }, 5000)
+
+  var boxIds = ['box1','box2','box3','box4','box5','box6','box7','box8','box9'];
+
+	// もぐらを出現させる関数
+	function showTarget() {
+		// 0以上1未満の小数の乱数を取得してそれが0.2(20%)以下の確率で出現させる
+		if (Math.random() < 0.2) {
+			// 0以上1未満の小数の乱数を取得するとき配列の要素IDを指定したいので配列の要素数を掛けて整数の最大値を取得
+			var box =document.getElementById(boxIds[Math.floor(Math.random()*boxIds.length)])
+			// まだもぐらが出現していないBOXならもぐらを出現させる
+			if (box.innerHTML == '') {
+				box.innerHTML = "<img src='/assets/mogura.png' class='mogura'>"
+			// 1000ミリ秒(1秒)出現させたらもぐらを隠す関数を呼び出す
+			  setTimeout(function(){ hideTarget(box); }, 1000)
+			}
+		}
+	}
+
+
+	// 出現させたもぐらを隠す関数
+  function hideTarget(box) {
+		box.innerHTML = '';
+	}
+  var countUpValue = 0;
+	localStorage.setItem('score', countUpValue);
+	// メッセージを表示する関数
+  function showMessage(e){
+		if(e.target.className == 'mogura') {
+			countUpValue++;
+			document.getElementById('count').innerHTML = '叩いた数: ' + countUpValue + '回';
+			document.getElementById('message').innerHTML = '○　モグラを叩いたよ！';
+			localStorage.setItem('score', countUpValue);
+		} else {
+      document.getElementById('message').innerHTML = '×　ミス！！！';
+		}
+	}
+
+	// もぐらをたたいたときにメッセージを表示する関数を呼び出す
+  var targets = document.getElementsByClassName('box')
+	for(var i = 0; i < targets.length; i++) {
+		targets[i].addEventListener('click', showMessage)
+	}
+
+
+	// もぐらを出現させる関数を100ミリ秒(0.1秒)ごとに呼び出す
+	setInterval(showTarget,100);
+}
+</script>
+</head>
+<body>
+	<div id='game-container'>
+		<h1>モグラ叩き</h1>
+		<div id='game'>
+			<h2>モグラを叩いてね</h2>
+			<table>
+				<tbody>
+					<tr>
+						<td class="box" id="box1"></td>
+						<td class="box" id="box2"></td>
+						<td class="box" id="box3"></td>
+					</tr>
+					<tr>
+						<td class="box" id="box4"></td>
+						<td class="box" id="box5"></td>
+						<td class="box" id="box6"></td>
+					</tr>
+					<tr>
+						<td class="box" id="box7"></td>
+						<td class="box" id="box8"></td>
+						<td class="box" id="box9"></td>
+					</tr>
+				</tbody>
+			</table>
+			<div id="count"></div>
+			<div id="message"></div>
+			<div id="counter"></div>
+		</div>
+	</div>
+</body>
+</html>

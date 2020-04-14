@@ -1,0 +1,16 @@
+.main
+  .top_image
+    = image_tag "/assets/mogura.png", alt: "", class: "mogura_image"
+    .game_discription
+      ルール説明
+  .game_play_btn
+    %button{"data-modal": "delete-item", "data-open": "modal", class: "play_game"}
+      = link_to 'プレイ！', games_index_path, class: "play_btn",data: {"turbolinks"=>false}
+  .ranking
+    ランキング
+    .no1
+      No.1   score:50   山田太郎
+    .no2
+      No.2   score:49   山田太郎
+    .no3
+      No.3   score:48   山田太郎
