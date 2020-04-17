@@ -3,4 +3,10 @@ class ResultsController < ApplicationController
     @score = params[:score]
     @score2 = "999"
   end
+  def new
+    @result = Result.new
+  end
+  def create
+
+  end
 end
