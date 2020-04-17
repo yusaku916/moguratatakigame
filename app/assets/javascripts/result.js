@@ -3,7 +3,7 @@ $(function(){
   localStorage.clear();
   console.log(gamescore);
   $.ajax({
-    url: '/results/index',  
+    url: '/results/new',  
 // 　　　　　#resultsコントローラーのindexアクションへのパス。
     type: 'GET',
 // 　　　　　# getかpostか選択

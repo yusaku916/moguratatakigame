@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   get 'games/index'
   get 'games/top'
   get 'results/index'
+  get 'results/new' => 'results#new'
+  post 'results' => 'results#create'
 end
