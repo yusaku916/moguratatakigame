@@ -1,16 +1,39 @@
 .main
   .top_image
     = image_tag "/assets/mogura.png", alt: "", class: "mogura_image"
-    .game_discription
-      ルール説明
+    .discription
+      #h1
+        ルール説明
+      .game_discription
+        プレイボタンでゲームスタート
+        %br 
+        ランダムに出てくるもぐらを叩こう！
+        %br
+        制限時間はX秒！
+        %br
+        入賞目指して叩きまくれ
   .game_play_btn
     %button{"data-modal": "delete-item", "data-open": "modal", class: "play_game"}
       = link_to 'プレイ！', games_index_path, class: "play_btn",data: {"turbolinks"=>false}
-  .ranking
-    ランキング
-    .no1
-      No.1   score:50   山田太郎
-    .no2
-      No.2   score:49   山田太郎
-    .no3
-      No.3   score:48   山田太郎
+  .ranking_box
+    .ranking
+      ランキング
+      -num = 1
+      -@ranking.each do |ranking|
+        -if num == 1
+          .no1
+            %i.fa.fa-trophy{"aria-hidden" => "true"}
+        -if num == 2
+          .no2
+            %i.fa.fa-trophy{"aria-hidden" => "true"}
+        -if num == 3
+          .no3
+            %i.fa.fa-trophy{"aria-hidden" => "true"}
+        .rank
+          No.
+          = num
+          = ranking.name  
+          score:
+          = ranking.score
+        -num += 1
+        -break if num== 11

@@ -13,11 +13,6 @@
 ActiveRecord::Schema.define(version: 2020_04_16_104747) do
 
   create_table "games", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "results", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "score"
     t.string "name"
     t.datetime "created_at", null: false

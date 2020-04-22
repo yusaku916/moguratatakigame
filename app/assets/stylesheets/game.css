@@ -53,7 +53,7 @@ td {
 	text-align:center;
 }
 img.mogura {
-	width: calc(100px - 6px);
+	width: 98%;
 	display: block;
 	margin: 0 auto;
 }
@@ -122,4 +122,54 @@ img.mogura:hover {
 
 .game_play_btn{
 	display: flex;
+}
+.discription{
+	width: auto;
+	height: calc(32% + 100px);
+	margin: auto;
+}
+#h1{
+	font-size: 36px;
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+}
+.game_discription{
+	margin: 10px 30px;
+	font-size: 24px;
+	background-color: #a9e2f8;
+	border-radius: 10px;
+	padding: 5px;
+	border: double 5px #3594b9;
+}
+.ranking{
+	margin-top: 50px;
+	font-size: 36px;
+	display: block;
+}
+.ranking_box{
+	width: 500px;
+	height: 200px;
+	margin: 0 auto;
+}
+.rank{
+	font-size: 38px;
+}
+.no1 i{
+	color: #DBB400;
+	float: left;
+	margin-top: 8px;
+	margin-left: -33px;
+}
+.no2 i{
+	color: #C9CACA;
+	float: left;
+	margin-top: 8px;
+	margin-left: -33px;
+}
+.no3 i{
+	color: #C08D5E;
+	float: left;
+	margin-top: 8px;
+	margin-left: -33px;
 }

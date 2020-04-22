@@ -9,7 +9,7 @@
 window.onload = function() {
 	// ページを移動する関数
   function loc() {
-    window.location = "/results/new";
+    window.location = "/games/new";
   }
   //ページを移動する関数を呼び出し時間を指定している。5000なら5秒
 	setTimeout(function(){ loc(); }, 5000)
@@ -42,7 +42,7 @@ window.onload = function() {
   function showMessage(e){
 		if(e.target.className == 'mogura') {
 			countUpValue++;
-			document.getElementById('count').innerHTML = '叩いた数: ' + countUpValue + '回';
+			document.getElementById('count').innerHTML = 'score: ' + countUpValue;
 			document.getElementById('message').innerHTML = '○　モグラを叩いたよ！';
 			localStorage.setItem('score', countUpValue);
 		} else {
