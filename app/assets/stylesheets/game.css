@@ -148,7 +148,7 @@ img.mogura:hover {
 	display: block;
 }
 .ranking_box{
-	width: 500px;
+	width: 80%;
 	height: 200px;
 	margin: 0 auto;
 }
@@ -172,4 +172,23 @@ img.mogura:hover {
 	float: left;
 	margin-top: 8px;
 	margin-left: -33px;
+}
+.now_score{
+	margin: 50px calc(10% - 30px) 0;
+}
+.top_btn{
+	font-size: 24px;
+	height: 38px;
+	width: 100px;
+  display: inline-block;
+  max-width: 180px;
+  text-align: left;
+  border: 2px solid #9ec34b;
+  color: #9ec34b;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+	transition: .4s;
+	background-color:white;
 }

@@ -6,6 +6,8 @@ class GamesController < ApplicationController
     @game = Game.new
     Game.count < 10
     @rankInScore = Game.all.order(score: "DESC")[9]
+    @ranking = Game.all.order(score: "DESC")
+    # binding.pry
   end
   def create
     @game = Game.create(name: game_params[:name], score: game_params[:score])

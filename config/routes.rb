@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root to: "games#top"
   get 'games/index'
   get 'games/top'
-  get 'games/index'
   get 'games/new' => 'games#new'
   post 'games' => 'games#create'
 end

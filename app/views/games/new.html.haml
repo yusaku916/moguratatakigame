@@ -1,15 +1,14 @@
-結果
 #score
-  :javascript
-    if (localStorage.getItem('score') === null){
-      window.location = "/games/top";
-    }else{
-      document.write('score: '+ localStorage.getItem('score'));};
+  -# :javascript
+  -#   if (localStorage.getItem('score') === null){
+  -#     window.location = "/games/top";
+  -#   }else{
+  -#     document.write('score: '+ localStorage.getItem('score'));};
 .now_score
   今回のスコア
   = @score
-  今回のスコア
-  = @score2
+  %button{"data-modal": "delete-item", "data-open": "modal", class: "play_game"}
+    = link_to 'トップへ', root_path, class: "top_btn",data: {"turbolinks"=>false}
   -if Game.count < 10 or @score > @rankInScore.score
     = form_for @game do |f|
       %h3
@@ -19,3 +18,25 @@
       = f.hidden_field :score, :value => @score
       %input{:type => "submit", :value => "決定", :class => "name_btn"}/
   -else
+.ranking_box
+  .ranking
+    ランキング
+    -num = 1
+    -@ranking.each do |ranking|
+      -if num == 1
+        .no1
+          %i.fa.fa-trophy{"aria-hidden" => "true"}
+      -if num == 2
+        .no2
+          %i.fa.fa-trophy{"aria-hidden" => "true"}
+      -if num == 3
+        .no3
+          %i.fa.fa-trophy{"aria-hidden" => "true"}
+      .rank
+        No.
+        = num
+        = ranking.name  
+        score:
+        = ranking.score
+      -num += 1
+      -break if num == 11

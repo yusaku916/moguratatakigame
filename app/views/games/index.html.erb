@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%= javascript_include_tag 'game.js' %>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <title>モグラ叩きゲーム</title>
@@ -8,8 +9,28 @@
 // すべてが読み込まれたあとに発動する
 window.onload = function() {
 	// ページを移動する関数
+	// var param = "score="+countUpValue;
+  // var url = "/games/new?" + param;
+	// var xhr = new XMLHttpRequest();
   function loc() {
-    window.location = "/games/new";
+		//　下の二つの処理がうまくいっていないっぽい
+		$.ajax({
+    url: '/games/new',  
+// 　　　　　#gamesコントローラーのアクションへのパス。
+    type: 'GET',
+// 　　　　　# getかpostか選択
+    dataType: 'json',
+// 　　　　　# htmlやjsonなど形式を選択。
+    async: true,
+// 　　　　　# 非同期ならtrue、同期ならfalse。
+    data: {
+      score: countUpValue,
+    },
+// 　　　　　# 渡したいパラメータを定義。
+		});
+		window.location.href = '<%= games_new_path %>';
+		// xhr.open('GET', url, false);
+		// xhr.send();
   }
   //ページを移動する関数を呼び出し時間を指定している。5000なら5秒
 	setTimeout(function(){ loc(); }, 5000)
