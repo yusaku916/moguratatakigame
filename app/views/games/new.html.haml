@@ -1,23 +1,24 @@
-#score
-  -# :javascript
-  -#   if (localStorage.getItem('score') === null){
-  -#     window.location = "/games/top";
-  -#   }else{
-  -#     document.write('score: '+ localStorage.getItem('score'));};
-.now_score
-  今回のスコア
-  = @score
+%head
+  = javascript_include_tag 'game.js'
+#result
+  :javascript
+    if (localStorage.getItem('score') === null){
+    window.location = "/games/top";
+    }else{
+    document.write('score: '+ localStorage.getItem('score'));
+    };
   %button{"data-modal": "delete-item", "data-open": "modal", class: "play_game"}
     = link_to 'トップへ', root_path, class: "top_btn",data: {"turbolinks"=>false}
-  -if Game.count < 10 or @score > @rankInScore.score
-    = form_for @game do |f|
-      %h3
-        ランクイン！
-      %span your name
-      = f.text_field :name, :class => "text_area",:placeholder => "名前を入力してください", :rows => "10"
-      = f.hidden_field :score, :value => @score
+#now_score
+  = form_for @game do |f|
+    %h3
+      ランクイン！
+    %span your name(5文字以内)
+    .nameForm
+      %label.nameBox
+        = f.text_field :name, :class => "text_area",:placeholder => "名前を入力", :rows => "10"
+      = f.hidden_field :score
       %input{:type => "submit", :value => "決定", :class => "name_btn"}/
-  -else
 .ranking_box
   .ranking
     ランキング

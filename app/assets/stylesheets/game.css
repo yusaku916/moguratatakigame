@@ -143,7 +143,7 @@ img.mogura:hover {
 	border: double 5px #3594b9;
 }
 .ranking{
-	margin-top: 50px;
+	margin-top: 30px;
 	font-size: 36px;
 	display: block;
 }
@@ -173,8 +173,8 @@ img.mogura:hover {
 	margin-top: 8px;
 	margin-left: -33px;
 }
-.now_score{
-	margin: 50px calc(10% - 30px) 0;
+#now_score{
+	margin: 0 calc(10% - 30px);
 }
 .top_btn{
 	font-size: 24px;
@@ -191,4 +191,32 @@ img.mogura:hover {
   border-radius: 4px;
 	transition: .4s;
 	background-color:white;
+}
+#result{
+	font-size: 30px;
+	margin: 50px calc(10% - 30px) 0;
+}
+.nameForm {
+	position: relative;
+	width: 500px;
+	/* margin: 0 0 10px; */
+	display: flex;
+}
+.nameForm input[type='text'] {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	border: 1px solid #ffffff;
+	box-shadow: 1px 1px 2px 0 #707070 inset;
+	border-radius: 4px;
+}
+.nameBox input[type='text']:focus {
+	outline: none;
+	box-shadow: inset 1px 1px 2px 0 #c9c9c9;
+}
+.name_btn {
+	margin: auto 0 0;
 }

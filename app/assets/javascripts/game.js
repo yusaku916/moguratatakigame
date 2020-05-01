@@ -16,3 +16,18 @@
 // // 　　　　　# 渡したいパラメータを定義。
 //   });
 // });
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById("now_score").style.display ="block";
+  if(gon.rankInScore > localStorage.getItem('score')){
+		// noneで非表示
+		now_score.style.display ="none";
+	}else{
+		// blockで表示
+    now_score.style.display ="block";
+    document.getElementById("game_score").value = localStorage.getItem('score');
+	}
+  localStorage.clear()
+});
+
+
