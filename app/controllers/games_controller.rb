@@ -13,7 +13,13 @@ class GamesController < ApplicationController
   end
   def create
     @game = Game.create(name: game_params[:name], score: game_params[:score])
-    redirect_to root_path
+    @ranking = Game.all.order(score: "DESC")
+    # redirect_to root_path
+    if @game.save
+      redirect_to root_path
+    else
+      render "new"
+    end
   end
 
   def top

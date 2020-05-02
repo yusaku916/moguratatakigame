@@ -11,6 +11,7 @@
     = link_to 'トップへ', root_path, class: "top_btn",data: {"turbolinks"=>false}
 #now_score
   = form_for @game do |f|
+    = render 'layouts/error_messages', model: f.object
     %h3
       ランクイン！
     %span your name(5文字以内)

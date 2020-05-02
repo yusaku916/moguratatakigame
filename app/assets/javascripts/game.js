@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     now_score.style.display ="block";
     document.getElementById("game_score").value = localStorage.getItem('score');
 	}
-  localStorage.clear()
+  // localStorage.clear()
 });
 
 

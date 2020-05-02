@@ -1,3 +1,3 @@
 class Game < ApplicationRecord
-  validates :name, presence: true
+  validates :name, presence: true, length: { maximum: 5 }
 end
