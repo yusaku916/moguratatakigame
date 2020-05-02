@@ -66,3 +66,7 @@ gem 'jquery-turbolinks'
 gem 'gon'
 gem 'pry-rails'
 gem 'font-awesome-rails'
+
+group :production do
+  gem 'pg'
+end
